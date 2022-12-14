@@ -18,12 +18,13 @@ if __name__ == '__main__':
 
     prices = doc.find_all(text="zł")
     parent = prices[0].parent.parent
-    price_whole = parent.find_all('span')[0]
-    price_decimal = parent.find_all('span')[2]
+
+    price_whole = parent.find(["span"], class_="a-price-whole").text
+    price_decimal = parent.find(["span"], class_="a-price-fraction").text
 
     print("Amazon page info:", page_titile.string.strip())
     print("Title:", title.text.strip())
-    print("Price:", price_whole.text + price_decimal.text, "zł")
+    print("Price:", price_whole + price_decimal, "zł")
 
     # print(doc.prettify())
 
