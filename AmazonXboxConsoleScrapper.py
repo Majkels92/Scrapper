@@ -18,7 +18,7 @@ def print_detail_list():
 if __name__ == '__main__':
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36'}
 
-    url = input("wklej link do przedmiotu/paste url: \n") # input url
+    url = input("wklej link do przedmiotu/paste url: \n")  # input url with xbox console
     respond = requests.get(url, headers=headers)    # get respond with requests module
     doc = bs4.BeautifulSoup(respond.text, "html.parser")  # set doc variable with html document received from request
 
